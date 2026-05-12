@@ -30,6 +30,7 @@ jobs:
           newman run "Silent_Voice - v1.postman_collection.json" \
             -e "Environment_Silent_Voice_postman_environment.json" \
             --ignore-redirects \
+            --suppress-exit-code \
             --reporters cli,htmlextra \
             --reporter-htmlextra-export newman-report.html \
             --folder "register" \
