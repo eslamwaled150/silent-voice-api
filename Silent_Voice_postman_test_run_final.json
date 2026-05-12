@@ -1,22 +1,22 @@
 {
-	"id": "994b4cec-f103-433b-bd52-57f3228bb325",
+	"id": "8af901ba-ae11-4f80-8c39-1f36165ac823",
 	"name": "Silent_Voice | v1",
-	"timestamp": "2026-05-01T05:27:03.580Z",
+	"timestamp": "2026-05-12T12:16:17.623Z",
 	"collection_id": "37128076-b6d949de-c05b-4bbe-ba8e-07219e38404e",
 	"folder_id": 0,
 	"environment_id": "37128076-ad282f63-7c69-48c8-8517-02276d164b43",
-	"totalPass": 38,
+	"totalPass": 55,
 	"delay": 0,
 	"persist": true,
 	"status": "finished",
-	"startedAt": "2026-05-01T05:26:51.320Z",
+	"startedAt": "2026-05-12T12:16:00.886Z",
 	"totalFail": 0,
 	"results": [
 		{
 			"id": "a23dea24-0684-435a-acf6-fe550802a146",
 			"name": "/api/Auth/register",
 			"url": "http://silentvoice.runasp.net/api/Auth/register",
-			"time": 3165,
+			"time": 1621,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -41,7 +41,7 @@
 				}
 			},
 			"times": [
-				3165
+				1621
 			],
 			"allTests": [
 				{
@@ -52,10 +52,43 @@
 			]
 		},
 		{
+			"id": "23c6c69e-2674-4cd8-85c5-ba8845438e3d",
+			"name": "Register_With_exceded_FName_digit",
+			"url": "http://silentvoice.runasp.net/api/Auth/register",
+			"time": 116,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status code is 400": true,
+				"First name cannot exceed 50 characters": true
+			},
+			"testPassFailCounts": {
+				"Status code is 400": {
+					"pass": 1,
+					"fail": 0
+				},
+				"First name cannot exceed 50 characters": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				116
+			],
+			"allTests": [
+				{
+					"Status code is 400": true,
+					"First name cannot exceed 50 characters": true
+				}
+			]
+		},
+		{
 			"id": "fdadade9-d832-48b5-9cf7-58497947d6c0",
 			"name": "confirm-email-fixed-otp",
 			"url": "http://silentvoice.runasp.net/api/Auth/confirm-email",
-			"time": 298,
+			"time": 146,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -80,7 +113,7 @@
 				}
 			},
 			"times": [
-				298
+				146
 			],
 			"allTests": [
 				{
@@ -94,7 +127,7 @@
 			"id": "040fa4ed-3138-46d5-b170-52b38eb7ec92",
 			"name": "/api/Auth/login",
 			"url": "http://silentvoice.runasp.net/api/Auth/login",
-			"time": 376,
+			"time": 420,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -124,7 +157,7 @@
 				}
 			},
 			"times": [
-				376
+				420
 			],
 			"allTests": [
 				{
@@ -136,10 +169,142 @@
 			]
 		},
 		{
+			"id": "092e8d9e-891d-40fc-b958-4a2cd21f5b7f",
+			"name": "Login_Wrong_Password",
+			"url": "http://silentvoice.runasp.net/api/Auth/login",
+			"time": 307,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status code is 400": true,
+				"Invalid email or password.": true
+			},
+			"testPassFailCounts": {
+				"Status code is 400": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Invalid email or password.": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				307
+			],
+			"allTests": [
+				{
+					"Status code is 400": true,
+					"Invalid email or password.": true
+				}
+			]
+		},
+		{
+			"id": "83204095-a000-42f0-b3f0-44286ff5a8f5",
+			"name": "/api/Auth/forgot-password",
+			"url": "http://silentvoice.runasp.net/api/Auth/forgot-password",
+			"time": 1207,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Password reset OTP sent to your email": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Password reset OTP sent to your email": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				1207
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Password reset OTP sent to your email": true
+				}
+			]
+		},
+		{
+			"id": "9ca2df82-2f68-495e-9c02-7004b61b1bbe",
+			"name": "/api/Auth/resend-password-reset-otp",
+			"url": "http://silentvoice.runasp.net/api/Auth/resend-password-reset-otp",
+			"time": 1109,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Password reset OTP resent successfully!": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Password reset OTP resent successfully!": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				1109
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Password reset OTP resent successfully!": true
+				}
+			]
+		},
+		{
+			"id": "cb881eac-b33e-4bde-beb1-d18e8de9da32",
+			"name": "/api/Auth/resend-email-otp",
+			"url": "http://silentvoice.runasp.net/api/Auth/resend-email-otp",
+			"time": 135,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status code is 400": true,
+				"Email already confirmed.": true
+			},
+			"testPassFailCounts": {
+				"Status code is 400": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Email already confirmed.": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				135
+			],
+			"allTests": [
+				{
+					"Status code is 400": true,
+					"Email already confirmed.": true
+				}
+			]
+		},
+		{
 			"id": "9f205c99-607d-4dca-bfa7-155bce9b2917",
 			"name": "/api/Sign/save",
 			"url": "http://silentvoice.runasp.net/api/Sign/save",
-			"time": 628,
+			"time": 329,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -164,7 +329,7 @@
 				}
 			},
 			"times": [
-				628
+				329
 			],
 			"allTests": [
 				{
@@ -178,7 +343,7 @@
 			"id": "6d752e74-a6c1-4e0e-ba0a-6c2eca1ea524",
 			"name": "/api/Sign/history",
 			"url": "http://silentvoice.runasp.net/api/Sign/history",
-			"time": 186,
+			"time": 147,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -203,7 +368,7 @@
 				}
 			},
 			"times": [
-				186
+				147
 			],
 			"allTests": [
 				{
@@ -216,8 +381,8 @@
 		{
 			"id": "174bc184-2dd3-4d17-9f9a-56b5b9bd5b93",
 			"name": "/api/Sign/:id",
-			"url": "http://silentvoice.runasp.net/api/Sign/32",
-			"time": 150,
+			"url": "http://silentvoice.runasp.net/api/Sign/5036",
+			"time": 143,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -242,7 +407,7 @@
 				}
 			},
 			"times": [
-				150
+				143
 			],
 			"allTests": [
 				{
@@ -253,10 +418,43 @@
 			]
 		},
 		{
+			"id": "c38fb5dc-60f4-4d6d-b26b-407c926dbbce",
+			"name": "/api/Sign/:id",
+			"url": "http://silentvoice.runasp.net/api/Sign/5036?=",
+			"time": 149,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Sign record deleted successfully.": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Sign record deleted successfully.": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				149
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Sign record deleted successfully.": true
+				}
+			]
+		},
+		{
 			"id": "8146cae7-8bab-4a67-b412-af75549ff884",
 			"name": "/api/Voice/transcribe",
 			"url": "http://silentvoice.runasp.net/api/Voice/transcribe",
-			"time": 2959,
+			"time": 2646,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -291,7 +489,7 @@
 				}
 			},
 			"times": [
-				2959
+				2646
 			],
 			"allTests": [
 				{
@@ -304,10 +502,70 @@
 			]
 		},
 		{
+			"id": "a4ecefa5-27e9-4ab1-8d6c-429618f3ca95",
+			"name": "Transcribe_Wrong_Voice_Extension",
+			"url": "http://silentvoice.runasp.net/api/Voice/transcribe",
+			"time": 618,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status code is 400": true
+			},
+			"testPassFailCounts": {
+				"Status code is 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				618
+			],
+			"allTests": [
+				{
+					"Status code is 400": true
+				}
+			]
+		},
+		{
+			"id": "84725428-adb9-426c-a4e9-bb538a1ad3a2",
+			"name": "Transcibe_Wrong_Language_Type",
+			"url": "http://silentvoice.runasp.net/api/Voice/transcribe",
+			"time": 4196,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status code is 400": true,
+				"Language must be 'en' or 'ar'.": true
+			},
+			"testPassFailCounts": {
+				"Status code is 400": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Language must be 'en' or 'ar'.": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4196
+			],
+			"allTests": [
+				{
+					"Status code is 400": true,
+					"Language must be 'en' or 'ar'.": true
+				}
+			]
+		},
+		{
 			"id": "7a6a155d-cb82-4781-8348-060cbb872a36",
 			"name": "/api/Voice/history",
 			"url": "http://silentvoice.runasp.net/api/Voice/history",
-			"time": 225,
+			"time": 127,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -332,7 +590,7 @@
 				}
 			},
 			"times": [
-				225
+				127
 			],
 			"allTests": [
 				{
@@ -345,8 +603,8 @@
 		{
 			"id": "f29653a5-f417-4338-9769-dd1d2f266f4b",
 			"name": "/api/Voice/:id",
-			"url": "http://silentvoice.runasp.net/api/Voice/15",
-			"time": 208,
+			"url": "http://silentvoice.runasp.net/api/Voice/398",
+			"time": 135,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -381,7 +639,7 @@
 				}
 			},
 			"times": [
-				208
+				135
 			],
 			"allTests": [
 				{
@@ -396,8 +654,8 @@
 		{
 			"id": "e31e7b9b-497f-4d95-89c4-3982eb7d1231",
 			"name": "/api/Voice/audio/:filename",
-			"url": "http://silentvoice.runasp.net/api/Voice/audio/c414d65e-03e1-418d-8b95-2d7875530270.wav",
-			"time": 570,
+			"url": "http://silentvoice.runasp.net/api/Voice/audio/57781e39-2d7b-4f7b-96f4-7c074ce68f0a.wav",
+			"time": 442,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -422,7 +680,7 @@
 				}
 			},
 			"times": [
-				570
+				442
 			],
 			"allTests": [
 				{
@@ -433,10 +691,43 @@
 			]
 		},
 		{
+			"id": "4b62f669-5ae4-445b-b49c-eb7c922731fe",
+			"name": "Validate_Wrong_Filename",
+			"url": "http://silentvoice.runasp.net/api/Voice/audio/nonexistent.wav",
+			"time": 120,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status code is 404": true,
+				" Audio file not found.": true
+			},
+			"testPassFailCounts": {
+				"Status code is 404": {
+					"pass": 1,
+					"fail": 0
+				},
+				" Audio file not found.": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				120
+			],
+			"allTests": [
+				{
+					"Status code is 404": true,
+					" Audio file not found.": true
+				}
+			]
+		},
+		{
 			"id": "95ea50ee-93a3-461e-baee-33fada02ad6e",
 			"name": "/api/Voice/:id",
-			"url": "http://silentvoice.runasp.net/api/Voice/15",
-			"time": 287,
+			"url": "http://silentvoice.runasp.net/api/Voice/398",
+			"time": 160,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -461,7 +752,7 @@
 				}
 			},
 			"times": [
-				287
+				160
 			],
 			"allTests": [
 				{
@@ -473,11 +764,15 @@
 		}
 	],
 	"count": 1,
-	"totalTime": 9052,
+	"totalTime": 14273,
 	"collection": {
 		"requests": [
 			{
 				"id": "a23dea24-0684-435a-acf6-fe550802a146",
+				"method": "POST"
+			},
+			{
+				"id": "23c6c69e-2674-4cd8-85c5-ba8845438e3d",
 				"method": "POST"
 			},
 			{
@@ -486,6 +781,22 @@
 			},
 			{
 				"id": "040fa4ed-3138-46d5-b170-52b38eb7ec92",
+				"method": "POST"
+			},
+			{
+				"id": "092e8d9e-891d-40fc-b958-4a2cd21f5b7f",
+				"method": "POST"
+			},
+			{
+				"id": "83204095-a000-42f0-b3f0-44286ff5a8f5",
+				"method": "POST"
+			},
+			{
+				"id": "9ca2df82-2f68-495e-9c02-7004b61b1bbe",
+				"method": "POST"
+			},
+			{
+				"id": "cb881eac-b33e-4bde-beb1-d18e8de9da32",
 				"method": "POST"
 			},
 			{
@@ -501,7 +812,19 @@
 				"method": "GET"
 			},
 			{
+				"id": "c38fb5dc-60f4-4d6d-b26b-407c926dbbce",
+				"method": "DELETE"
+			},
+			{
 				"id": "8146cae7-8bab-4a67-b412-af75549ff884",
+				"method": "POST"
+			},
+			{
+				"id": "a4ecefa5-27e9-4ab1-8d6c-429618f3ca95",
+				"method": "POST"
+			},
+			{
+				"id": "84725428-adb9-426c-a4e9-bb538a1ad3a2",
 				"method": "POST"
 			},
 			{
@@ -514,6 +837,10 @@
 			},
 			{
 				"id": "e31e7b9b-497f-4d95-89c4-3982eb7d1231",
+				"method": "GET"
+			},
+			{
+				"id": "4b62f669-5ae4-445b-b49c-eb7c922731fe",
 				"method": "GET"
 			},
 			{
