@@ -1,0 +1,51 @@
+name: Newman API Tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  newman-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Newman and HTML reporter
+        run: |
+          npm install -g newman
+          npm install -g newman-reporter-htmlextra
+
+      - name: Run Newman Tests
+        run: |
+          newman run "Silent_Voice - v1.postman_collection.json" \
+            -e "Environment_Silent_Voice_postman_environment.json" \
+            --ignore-redirects \
+            --reporters cli,htmlextra \
+            --reporter-htmlextra-export newman-report.html \
+            --folder "register" \
+            --folder "confirm-email-fixed-otp" \
+            --folder "login" \
+            --folder "forgot-password" \
+            --folder "resend-password-reset-otp" \
+            --folder "resend-email-otp" \
+            --folder "save" \
+            --folder "history" \
+            --folder "Sign" \
+            --folder "Voice"
+
+      - name: Upload HTML Report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: newman-html-report
+          path: newman-report.html
