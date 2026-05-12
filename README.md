@@ -105,8 +105,6 @@ Or simply double-click `newman-report.html` from File Explorer.
 
 ---
 
----
-
 ## 📊 Test Report
 
 🔗 **[View Newman Test Report](https://eslamwaled150.github.io/silent-voice-api/)**
