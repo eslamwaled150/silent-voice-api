@@ -30,13 +30,12 @@ jobs:
 
       - name: Run Newman Tests
         run: |
-          mkdir -p docs
           newman run "Silent_Voice - v1.postman_collection.json" \
             -e "Environment_Silent_Voice_postman_environment.json" \
             --ignore-redirects \
             --suppress-exit-code \
             --reporters cli,htmlextra \
-            --reporter-htmlextra-export docs/index.html \
+            --reporter-htmlextra-export index.html \
             --folder "register" \
             --folder "confirm-email-fixed-otp" \
             --folder "login" \
@@ -53,4 +52,5 @@ jobs:
         if: always()
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs
+          publish_dir: .
+          include_files: index.html
