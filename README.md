@@ -4,20 +4,6 @@
 
 ---
 
-## 📌 Table of Contents
-
-- [About the Project](#about-the-project)
-- [API Documentation](#api-documentation)
-- [API Modules](#api-modules)
-- [Tech Stack](#tech-stack)
-- [Getting Started](#getting-started)
-- [API Reference](#api-reference)
-- [Testing](#testing)
-- [Environment Variables](#environment-variables)
-- [Contributors](#contributors)
-
----
-
 ## 📖 About the Project
 
 **Silent Voice** is a graduation project API built to assist individuals who are deaf, hard of hearing, or speech-impaired. The system provides:
@@ -91,6 +77,3 @@ The API will be available at `http://localhost:5000`
 
 ---
 
-## 📡 API Reference
-
-### Base URL
