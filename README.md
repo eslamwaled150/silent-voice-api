@@ -70,10 +70,21 @@ newman --version
 ### ▶️ Run the Collection
 
 ```bash
-newman run Silent_Voice_postman_collection.json \
-  -e Environment_Silent_Voice_postman_environment.json \
+newman run "Silent_Voice - v1.postman_collection.json" \
+  -e "Environment_Silent_Voice_postman_environment.json" \
+  --ignore-redirects \
   --reporters cli,htmlextra \
-  --reporter-htmlextra-export newman-report.html
+  --reporter-htmlextra-export newman-report.html \
+  --folder "register" \
+  --folder "confirm-email-fixed-otp" \
+  --folder "login" \
+  --folder "forgot-password" \
+  --folder "resend-password-reset-otp" \
+  --folder "resend-email-otp" \
+  --folder "save" \
+  --folder "history" \
+  --folder "Sign" \
+  --folder "Voice"
 ```
 
 ---
