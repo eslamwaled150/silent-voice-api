@@ -102,3 +102,11 @@ open newman-report.html
 ```
 
 Or simply double-click `newman-report.html` from File Explorer.
+
+---
+
+## 📊 Test Report
+
+> Auto-generated after every push via GitHub Actions
+
+🔗 **[View Live Newman Test Report](https://eslamwaled150.github.io/silent-voice-api/)**
