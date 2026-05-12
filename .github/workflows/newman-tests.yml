@@ -27,12 +27,12 @@ jobs:
 
       - name: Run Newman Tests
         run: |
+          mkdir -p docs
           newman run "Silent_Voice - v1.postman_collection.json" \
             -e "Environment_Silent_Voice_postman_environment.json" \
             --ignore-redirects \
-            --suppress-exit-code \
             --reporters cli,htmlextra \
-            --reporter-htmlextra-export newman-report.html \
+            --reporter-htmlextra-export docs/index.html \
             --folder "register" \
             --folder "confirm-email-fixed-otp" \
             --folder "login" \
@@ -44,9 +44,9 @@ jobs:
             --folder "Sign" \
             --folder "Voice"
 
-      - name: Upload HTML Report
-        uses: actions/upload-artifact@v4
+      - name: Deploy Report to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
         if: always()
         with:
-          name: newman-html-report
-          path: newman-report.html
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
