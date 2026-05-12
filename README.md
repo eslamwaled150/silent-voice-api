@@ -32,48 +32,62 @@ Interactive API docs powered by **Scalar (OpenAPI 3.1)**:
 | `Auth` | Register, login, email OTP confirmation, Google login, forgot/reset password |
 | `Sign` | Save sign language data, view history, delete records |
 | `Voice` | Upload & transcribe audio, manage transcription history, stream audio files |
-| `Models` | Shared response/request models |
 
 ---
 
 ## 🛠 Tech Stack
 
-- **Backend:** ASP.NET Core Web API
-- **Documentation:** Scalar (OpenAPI 3.1)
-- **Authentication:** JWT Bearer Tokens + OTP via Email + Google OAuth2
-- **AI / ML:** Speech-to-text transcription model
-- **Testing:** Postman + Newman (automated HTML reports)
-- **Deployment:** runasp.net
+| Layer | Tool |
+|-------|------|
+| API | ASP.NET Core Web API |
+| Documentation | Scalar (OpenAPI 3.1) |
+| Authentication | JWT + OTP via Email + Google OAuth2 |
+| AI / ML | Speech-to-text transcription model |
+| API Testing | Postman |
+| Automated Testing | Newman + HTML Extra Reporter |
+| Deployment | runasp.net |
 
 ---
-
-## 🚀 Getting Started
+## 🧪 Testing with Newman
 
 ### Prerequisites
 
-- .NET 8 SDK
-- SQL Server / PostgreSQL
-- Postman (for manual testing)
-- Newman (for automated test runs)
-
-### Installation
+Make sure you have **Node.js** installed, then run:
 
 ```bash
-# Clone the repository
-git clone https://github.com/eslamwaled150/silent-voice-api.git
-cd silent-voice-api
-
-# Restore dependencies
-dotnet restore
-
-# Apply database migrations
-dotnet ef database update
-
-# Run the API
-dotnet run
+npm install -g newman
+npm install -g newman-reporter-htmlextra
 ```
 
-The API will be available at `http://localhost:5000`
+Verify installation:
+
+```bash
+newman --version
+```
 
 ---
 
+### ▶️ Run the Collection
+
+```bash
+newman run Silent_Voice_postman_collection.json \
+  -e Environment_Silent_Voice_postman_environment.json \
+  --reporters cli,htmlextra \
+  --reporter-htmlextra-export newman-report.html
+```
+
+---
+
+### 📊 View the HTML Report
+
+After the run completes, open the report in your browser:
+
+```bash
+# Windows
+start newman-report.html
+
+# Mac
+open newman-report.html
+```
+
+Or simply double-click `newman-report.html` from File Explorer.
