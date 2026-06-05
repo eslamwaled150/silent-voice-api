@@ -69,6 +69,9 @@ Verify installation:
 newman --version
 ```
 
+📄 **[View Full Test Case Sheet](https://docs.google.com/spreadsheets/d/1nuiRtmYurqNFSZ3_cE5rwaM8b8V6bV-O7Ab_EBggod8/edit?gid=0#gid=0)**
+
+> Includes: Summary, Positive Test Cases, Negative Test Cases, API Bugs, and Edge Cases tabs.
 ---
 
 ### ▶️ Run the Collection
