@@ -15,6 +15,10 @@
 
 ---
 
+## 🎥 Project Demo
+
+[![Silent Voice Demo](https://img.shields.io/badge/Watch-Demo_Video-red?style=for-the-badge)](https://drive.google.com/file/d/17wTSN-xWgeQCxYm7-GSAS0TCcozKvmqM/view)
+
 ## 📄 API Documentation
 
 Interactive API docs powered by **Scalar (OpenAPI 3.1)**:
